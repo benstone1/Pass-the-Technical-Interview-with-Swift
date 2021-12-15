@@ -10,8 +10,14 @@ import Foundation
 class Node {
   var data: String
   var next: Node?
-  
+
   init(data: String) {
     self.data = data
+  }
+}
+
+extension Node: CustomStringConvertible {
+  var description: String {
+    return data 
   }
 }

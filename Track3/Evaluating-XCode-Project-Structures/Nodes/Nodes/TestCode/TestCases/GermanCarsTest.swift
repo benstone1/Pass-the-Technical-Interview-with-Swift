@@ -15,5 +15,9 @@ class GermanCarsTest : Testable {
     germanCars.appendNode("Porsche")
     germanCars.appendNode("Audi")
     print(germanCars)
+    print(germanCars.getNode(at: 1)!)  // Prints: Porsche -> Audi -> nil
+    print(germanCars.getNode(at: 2)!)  // Prints: Audi -> nil
+    _ = germanCars.removeNode(from: 1)!
+    print(germanCars) // Prints: Porsche -> Audi -> nil
   }
 }
