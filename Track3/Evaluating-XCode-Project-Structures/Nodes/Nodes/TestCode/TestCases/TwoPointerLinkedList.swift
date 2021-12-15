@@ -14,7 +14,7 @@ class TwoPointerLinkedList : Testable {
     var currentNode = list.head
     while currentNode != nil {
       linkedListArray.append(currentNode!)
-        currentNode = currentNode!.next
+      currentNode = currentNode!.next
     }
     return linkedListArray[n-1];
   }
@@ -28,29 +28,11 @@ class TwoPointerLinkedList : Testable {
         current = tailSeeker
         break
       }
-        tailSeeker = tailSeeker!.next
-        count += 1
+      tailSeeker = tailSeeker!.next
+      count += 1
     }
     return current!
   }
-  /*
-   public static Node nthLastNode(LinkedList list, int n) {
-     Node current = null;
-     Node tailSeeker = list.head;
-     int count = 0;
-     while (tailSeeker != null) {
-       tailSeeker = tailSeeker.getNextNode();
-       if (count >= n) {
-         if (current == null) {
-           current = list.head;
-         }
-         current = current.getNextNode();
-       }
-       count++;
-     }
-     return current;
-   }
-  */
   
   override func run() {
     let testList = LinkedList()
