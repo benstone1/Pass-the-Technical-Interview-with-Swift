@@ -12,6 +12,8 @@ class TestCode {
   func run() {
     
     let runList = [
+      BasicQueueTest(),
+      BasicNodesTest(),
       GermanCarsTest(),
       SwapNodesTest(),
       TwoPointerLinkedList()
