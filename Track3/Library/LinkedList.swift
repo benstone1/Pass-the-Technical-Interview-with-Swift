@@ -54,17 +54,7 @@ class LinkedList {
 }
 
 extension LinkedList: CustomStringConvertible {
-  /*  var description: String {
-   return head?.description ?? "nil"
-   }
-   */
-  var description: String {
-    var nodes = ""
-    var node = head
-    while node != nil {
-      nodes += "\(node!.data) "
-      node = node!.next
+    var description: String {
+        return head?.description ?? "nil"
     }
-    return nodes
-  }
 }
