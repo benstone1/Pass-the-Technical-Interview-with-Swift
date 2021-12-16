@@ -8,67 +8,73 @@
 import Foundation
 
 class SwapNodesTest: Testable {
-
+  
   override func run() {
-
-    func swapNodes(list: LinkedList, data1: Int, data2: Int) {
-
-      print("Swapping \(data1) and \(data2)")
+    
+    func swapNodes(list: LinkedList, index1: Int, index2: Int) {
+      
+      print("Swapping \(index1) and \(index2)")
       var node1Prev: Node?
       var node2Prev: Node?
       var node1 = list.head
       var node2 = list.head
-
-      if data1 == data2 {
-        print("Elements are the same - no swap to be made")
+      
+      if index1 == index2 {
+        print("Element indicies are the same - no swap to be made")
         return
       }
-
-      while node1 != nil {
-        if node1?.data == String(data1) {
-          break
-        }
-        node1Prev = node1
-        node1 = node1?.next
-      }
-
-      while node2 != nil {
-        if node2!.data == String(data2) {
-          break
-        }
-        node2Prev = node2
-        node2 = node2?.next
-      }
-
+      
+      node1 = list.getNode(at: index1)
+      node2 = list.getNode(at: index2)
+      
       if node1 == nil || node2 == nil {
         print("Swap not possible - one or more elements are not in the list")
         return
       }
+      
+      if index1 > 0 {
+        node1Prev = list.getNode(at: index1 - 1)
+      }
+      if index2 > 0 {
+        node2Prev = list.getNode(at: index2 - 1)
+      }
+      
+      node1Prev?.next = node2
+      node2Prev?.next = node1
+      let tempNode = node1?.next
+      node1?.next = node2?.next
 
       if node1Prev == nil {
         list.head = node2
-      } else {
-        node1Prev?.next = node2
       }
 
-      if node2Prev == nil {
-        list.head = node1
-      } else {
-        node2Prev?.next = node1
+      if node2?.next == nil {
+        list.tail = node1
       }
 
-      let temp = node1?.next
-      node1?.next = node2?.next
-      node2?.next = temp
+      node2?.next = tempNode
+      
     }
-
-    let testList = LinkedList()
+    
+    let testList1 = LinkedList()
+    let testList2 = LinkedList()
+    let testList3 = LinkedList()
     for i in 1...10 {
-      testList.append(String(i))
+      testList1.append(String(i))
+      testList2.append(String(i))
+      testList3.append(String(i))
     }
-    print(testList)
-    swapNodes(list: testList, data1: 2, data2: 5)
-    print(testList)
+    print(testList1)
+    swapNodes(list: testList1, index1: 2, index2: 5)
+    print(testList1)
+    print("tail is \(String(describing: testList1.tail!))")
+    print(testList2)
+    swapNodes(list: testList2, index1: 0, index2: 5)
+    print(testList2)
+    print("tail is \(String(describing: testList2.tail!))")
+    print(testList3)
+    swapNodes(list: testList3, index1: 2, index2: 9)
+    print(testList3)
+    print("tail is \(String(describing: testList3.tail!))")
   }
-
 }
