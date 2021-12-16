@@ -64,7 +64,7 @@ class SwapNodesTest: Testable {
 
     let testList = LinkedList()
     for i in 1...10 {
-      testList.appendNode(String(i))
+      testList.append(String(i))
     }
     print(testList)
     swapNodes(list: testList, data1: 2, data2: 5)

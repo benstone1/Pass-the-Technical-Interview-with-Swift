@@ -38,7 +38,7 @@ class TwoPointerLinkedList : Testable {
     let testList = LinkedList()
     
     for i in 1...10 {
-      testList.appendNode( String(i*100) );
+      testList.append( String(i*100) );
     }
     let nthPosition = 8
     let nthPositionNodeSpace:Node = arrayNthLast(list:testList, n:nthPosition)

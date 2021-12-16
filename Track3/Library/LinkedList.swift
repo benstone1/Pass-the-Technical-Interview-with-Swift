@@ -11,7 +11,7 @@ class LinkedList {
   var head: Node?
   var tail: Node?
   
-  func appendNode(_ data: String) {
+  func append(_ data: String) {
     let newNode = Node(data: data)
     if let lastNode = tail {
       lastNode.next = newNode

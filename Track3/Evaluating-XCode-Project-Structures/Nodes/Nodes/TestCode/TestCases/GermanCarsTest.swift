@@ -11,9 +11,9 @@ class GermanCarsTest : Testable {
   
   override func run() {
     let germanCars = LinkedList()
-    germanCars.appendNode("Volkswagen")
-    germanCars.appendNode("Porsche")
-    germanCars.appendNode("Audi")
+    germanCars.append("Volkswagen")
+    germanCars.append("Porsche")
+    germanCars.append("Audi")
     print(germanCars)
     print(germanCars.getNode(at: 1)!)  // Prints: Porsche -> Audi -> nil
     print(germanCars.getNode(at: 2)!)  // Prints: Audi -> nil
