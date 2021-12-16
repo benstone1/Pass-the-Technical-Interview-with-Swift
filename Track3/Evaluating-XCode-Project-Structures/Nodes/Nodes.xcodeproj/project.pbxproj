@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1106178276BB850003DDD30 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1106177276BB850003DDD30 /* Node.swift */; };
+		C110617C276BB991003DDD30 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1106179276BB991003DDD30 /* Queue.swift */; };
+		C110617D276BB991003DDD30 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110617A276BB991003DDD30 /* Stack.swift */; };
+		C110617E276BB991003DDD30 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110617B276BB991003DDD30 /* LinkedList.swift */; };
 		C11527E7276B8F3600A6A88F /* BasicStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11527E6276B8F3600A6A88F /* BasicStackTest.swift */; };
 		C15A5504276A9828002014E2 /* BasicNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A5503276A9828002014E2 /* BasicNodesTest.swift */; };
-		C15A5506276A9D6F002014E2 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A5505276A9D6F002014E2 /* Queue.swift */; };
 		C15A5508276A9E87002014E2 /* BasicQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A5507276A9E87002014E2 /* BasicQueueTest.swift */; };
-		C15A550C276BB6B9002014E2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A550B276BB6B9002014E2 /* Node.swift */; };
-		C176A065276B91D500AC83FE /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176A064276B91D500AC83FE /* Stack.swift */; };
 		C1D7D1942758E61400EA4262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1932758E61400EA4262 /* AppDelegate.swift */; };
 		C1D7D1962758E61400EA4262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1952758E61400EA4262 /* SceneDelegate.swift */; };
 		C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1972758E61400EA4262 /* ViewController.swift */; };
@@ -22,7 +23,6 @@
 		C1D7D1AB2758E61600EA4262 /* NodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1AA2758E61600EA4262 /* NodesTests.swift */; };
 		C1D7D1B62758E61600EA4262 /* NodesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1B52758E61600EA4262 /* NodesUITests.swift */; };
 		C1D7D1C72758E67E00EA4262 /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1C62758E67E00EA4262 /* TestCode.swift */; };
-		C1D7D1D52758E86800EA4262 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1D42758E86800EA4262 /* LinkedList.swift */; };
 		C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1DA2758E8B000EA4262 /* Testable.swift */; };
 		C1D7D1E42758E8E800EA4262 /* GermanCarsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */; };
 		C1D7D1EC2758E8F500EA4262 /* SwapNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1EB2758E8F500EA4262 /* SwapNodesTest.swift */; };
@@ -47,12 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1106177276BB850003DDD30 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = ../../../../Library/Node.swift; sourceTree = "<group>"; };
+		C1106179276BB991003DDD30 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = ../../../../Library/Queue.swift; sourceTree = "<group>"; };
+		C110617A276BB991003DDD30 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../../../../Library/Stack.swift; sourceTree = "<group>"; };
+		C110617B276BB991003DDD30 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = ../../../../Library/LinkedList.swift; sourceTree = "<group>"; };
 		C11527E6276B8F3600A6A88F /* BasicStackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStackTest.swift; sourceTree = "<group>"; };
 		C15A5503276A9828002014E2 /* BasicNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNodesTest.swift; sourceTree = "<group>"; };
-		C15A5505276A9D6F002014E2 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		C15A5507276A9E87002014E2 /* BasicQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQueueTest.swift; sourceTree = "<group>"; };
-		C15A550B276BB6B9002014E2 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = ../../../../../Library/Node.swift; sourceTree = "<group>"; };
-		C176A064276B91D500AC83FE /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		C1D7D1902758E61400EA4262 /* Nodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D7D1932758E61400EA4262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D7D1952758E61400EA4262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		C1D7D1B52758E61600EA4262 /* NodesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesUITests.swift; sourceTree = "<group>"; };
 		C1D7D1B72758E61600EA4262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1D7D1C62758E67E00EA4262 /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
-		C1D7D1D42758E86800EA4262 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		C1D7D1DA2758E8B000EA4262 /* Testable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testable.swift; sourceTree = "<group>"; };
 		C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanCarsTest.swift; sourceTree = "<group>"; };
 		C1D7D1EB2758E8F500EA4262 /* SwapNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapNodesTest.swift; sourceTree = "<group>"; };
@@ -100,12 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C15A550A276BB69C002014E2 /* New Group */ = {
+		C1106176276BB7A1003DDD30 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				C15A550B276BB6B9002014E2 /* Node.swift */,
+				C110617B276BB991003DDD30 /* LinkedList.swift */,
+				C1106179276BB991003DDD30 /* Queue.swift */,
+				C110617A276BB991003DDD30 /* Stack.swift */,
+				C1106177276BB850003DDD30 /* Node.swift */,
 			);
-			path = "New Group";
+			name = Library;
 			sourceTree = "<group>";
 		};
 		C1D7D1872758E61400EA4262 = {
@@ -164,22 +167,11 @@
 		C1D7D1CB2758E83C00EA4262 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
-				C15A550A276BB69C002014E2 /* New Group */,
-				C1D7D1D92758E87200EA4262 /* BaseClasses */,
+				C1106176276BB7A1003DDD30 /* Library */,
 				C1D7D1E22758E8D100EA4262 /* TestCases */,
 				C1D7D1C62758E67E00EA4262 /* TestCode.swift */,
 			);
 			path = TestCode;
-			sourceTree = "<group>";
-		};
-		C1D7D1D92758E87200EA4262 /* BaseClasses */ = {
-			isa = PBXGroup;
-			children = (
-				C176A064276B91D500AC83FE /* Stack.swift */,
-				C1D7D1D42758E86800EA4262 /* LinkedList.swift */,
-				C15A5505276A9D6F002014E2 /* Queue.swift */,
-			);
-			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		C1D7D1E22758E8D100EA4262 /* TestCases */ = {
@@ -327,18 +319,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15A5508276A9E87002014E2 /* BasicQueueTest.swift in Sources */,
-				C176A065276B91D500AC83FE /* Stack.swift in Sources */,
-				C1D7D1D52758E86800EA4262 /* LinkedList.swift in Sources */,
 				C1D7D1C72758E67E00EA4262 /* TestCode.swift in Sources */,
+				C110617D276BB991003DDD30 /* Stack.swift in Sources */,
 				C15A5504276A9828002014E2 /* BasicNodesTest.swift in Sources */,
 				C1D7D1E42758E8E800EA4262 /* GermanCarsTest.swift in Sources */,
-				C15A550C276BB6B9002014E2 /* Node.swift in Sources */,
+				C110617C276BB991003DDD30 /* Queue.swift in Sources */,
+				C1106178276BB850003DDD30 /* Node.swift in Sources */,
 				C1D7D1FA275914F700EA4262 /* TwoPointerLinkedList.swift in Sources */,
 				C1D7D1EC2758E8F500EA4262 /* SwapNodesTest.swift in Sources */,
-				C15A5506276A9D6F002014E2 /* Queue.swift in Sources */,
 				C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */,
 				C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */,
 				C11527E7276B8F3600A6A88F /* BasicStackTest.swift in Sources */,
+				C110617E276BB991003DDD30 /* LinkedList.swift in Sources */,
 				C1D7D1942758E61400EA4262 /* AppDelegate.swift in Sources */,
 				C1D7D1962758E61400EA4262 /* SceneDelegate.swift in Sources */,
 			);
