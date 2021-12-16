@@ -8,9 +8,11 @@
 import Foundation
 
 class Stack {
-  var stack:LinkedList = LinkedList()
+  var stack:LinkedList
   var size:Int
   
   init() {
+    stack = LinkedList()
+    size = 0
   }
 }
