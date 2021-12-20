@@ -12,11 +12,11 @@ class TestCode {
   func run() {
     
     let runList = [
-      BasicStackTest(),
+      /*BasicStackTest(),
       BasicQueueTest(),
       BasicNodesTest(),
       GermanCarsTest(),
-      SwapNodesTest(),
+      SwapNodesTest(),*/
       TwoPointerLinkedList()
     ]
     
