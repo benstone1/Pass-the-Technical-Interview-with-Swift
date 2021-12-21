@@ -53,6 +53,26 @@ class LinkedList {
   }
 }
 
+extension LinkedList {
+  func add(_ data: String) {
+    let newHead = Node(data: data)
+      let current = head
+      head = newHead
+      if current != nil {
+        head?.next = current
+      }
+  }
+
+  func remove() -> Node? {
+      let removedHead = head
+      if removedHead != nil {
+        head = removedHead?.next
+        removedHead?.next = nil
+      }
+      return removedHead
+  }
+}
+
 extension LinkedList: CustomStringConvertible {
     var description: String {
         return head?.description ?? "nil"

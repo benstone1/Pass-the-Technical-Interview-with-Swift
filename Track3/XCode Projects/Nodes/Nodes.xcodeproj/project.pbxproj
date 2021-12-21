@@ -14,6 +14,7 @@
 		C11527E7276B8F3600A6A88F /* BasicStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11527E6276B8F3600A6A88F /* BasicStackTest.swift */; };
 		C15A5504276A9828002014E2 /* BasicNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A5503276A9828002014E2 /* BasicNodesTest.swift */; };
 		C15A5508276A9E87002014E2 /* BasicQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15A5507276A9E87002014E2 /* BasicQueueTest.swift */; };
+		C19BE367277228320065D670 /* LessonStacksSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BE366277228320065D670 /* LessonStacksSwift.swift */; };
 		C1D7D1942758E61400EA4262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1932758E61400EA4262 /* AppDelegate.swift */; };
 		C1D7D1962758E61400EA4262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1952758E61400EA4262 /* SceneDelegate.swift */; };
 		C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1972758E61400EA4262 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		C11527E6276B8F3600A6A88F /* BasicStackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStackTest.swift; sourceTree = "<group>"; };
 		C15A5503276A9828002014E2 /* BasicNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNodesTest.swift; sourceTree = "<group>"; };
 		C15A5507276A9E87002014E2 /* BasicQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQueueTest.swift; sourceTree = "<group>"; };
+		C19BE366277228320065D670 /* LessonStacksSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStacksSwift.swift; sourceTree = "<group>"; };
 		C1D7D1902758E61400EA4262 /* Nodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D7D1932758E61400EA4262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D7D1952758E61400EA4262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				C15A5503276A9828002014E2 /* BasicNodesTest.swift */,
 				C15A5507276A9E87002014E2 /* BasicQueueTest.swift */,
 				C11527E6276B8F3600A6A88F /* BasicStackTest.swift */,
+				C19BE366277228320065D670 /* LessonStacksSwift.swift */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */,
 				C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */,
 				C11527E7276B8F3600A6A88F /* BasicStackTest.swift in Sources */,
+				C19BE367277228320065D670 /* LessonStacksSwift.swift in Sources */,
 				C110617E276BB991003DDD30 /* LinkedList.swift in Sources */,
 				C1D7D1942758E61400EA4262 /* AppDelegate.swift in Sources */,
 				C1D7D1962758E61400EA4262 /* SceneDelegate.swift in Sources */,

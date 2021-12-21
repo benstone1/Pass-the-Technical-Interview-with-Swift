@@ -12,12 +12,13 @@ class TestCode {
   func run() {
     
     let runList = [
+      LessonStacksSwift()
       /*BasicStackTest(),
       BasicQueueTest(),
       BasicNodesTest(),
       GermanCarsTest(),
-      SwapNodesTest(),*/
-      TwoPointerLinkedList()
+      SwapNodesTest(),
+      TwoPointerLinkedList()*/
     ]
     
     runList.forEach { test in

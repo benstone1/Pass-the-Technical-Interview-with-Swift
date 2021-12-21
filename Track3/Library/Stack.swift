@@ -8,10 +8,12 @@
 import Foundation
 
 class Stack {
-  var stack:LinkedList
+  var stack:LinkedList?
   var size:Int
+  //static final int DEFAULT_MAX_SIZE = Integer.MAX_VALUE;
+  //public int maxSize;
   
-  init() {
+  init() { // DEFAULT_MAX_SIZE
     stack = LinkedList()
     size = 0
   }
