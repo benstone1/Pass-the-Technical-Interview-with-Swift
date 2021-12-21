@@ -12,32 +12,32 @@ class LessonStacksSwift : Testable {
   func exercise1() {
   
     class Stack {
-      var stack: LinkedList?
+      var list: LinkedList?
       var size:Int
 
       init() {
         //
-        stack = LinkedList()
+        list = LinkedList()
         size = 0
         //
       }
     }
 
-    let stack = Stack()
-    print("This stack has \(stack.size) nodes.")
+    let list = Stack()
+    print("This stack has \(list.size) nodes.")
   }
 
   func exercise2() {
     
     class Stack {
 
-      var stack: LinkedList?
+      var list: LinkedList?
       var size:Int
       var maximumSize:Int
     
       init(maximumSize:Int = Int.max) {
         //
-        stack = LinkedList()
+        list = LinkedList()
         size = 0
         self.maximumSize = maximumSize
         //
@@ -54,19 +54,19 @@ class LessonStacksSwift : Testable {
     
     class Stack {
 
-      var stack: LinkedList?
+      var list: LinkedList?
       var size:Int
       var maximumSize:Int
     
       init(maximumSize:Int = Int.max) {
-        stack = LinkedList()
+        list = LinkedList()
         size = 0
         self.maximumSize = maximumSize
       }
       
       func push(_ data:String) {
         //
-        stack?.add(data)
+        list?.add(data)
         size += 1
         print("Added \(data)! Stack size is now \(size)")
         //
@@ -77,31 +77,31 @@ class LessonStacksSwift : Testable {
     dishes.push("blue plate");
     dishes.push("white plate");
     dishes.push("yellow plate");
-    print("The \(dishes.stack?.head?.data ?? "unknown value") is at the top of the stack.");
+    print("The \(dishes.list?.head?.data ?? "unknown value") is at the top of the stack.");
   }
   
   func exercise4() {
     
     class Stack {
 
-      var stack: LinkedList?
+      var list: LinkedList?
       var size:Int
       var maximumSize:Int
     
       init(maximumSize:Int = Int.max) {
-        stack = LinkedList()
+        list = LinkedList()
         size = 0
         self.maximumSize = maximumSize
       }
       
       func push(_ data:String) {
-        stack?.add(data)
+        list?.add(data)
         size += 1
         print("Added \(data)! Stack size is now \(size)")
       }
       
       func pop() -> String? {
-        let node = stack?.remove()
+        let node = list?.remove()
         if node != nil {
           size -= 1
         }
@@ -122,24 +122,24 @@ class LessonStacksSwift : Testable {
     
     class Stack {
 
-      var stack: LinkedList?
+      var list: LinkedList?
       var size:Int
       var maximumSize:Int
     
       init(maximumSize:Int = Int.max) {
-        stack = LinkedList()
+        list = LinkedList()
         size = 0
         self.maximumSize = maximumSize
       }
       
       func push(_ data:String) {
-        stack?.add(data)
+        list?.add(data)
         size += 1
         print("Added \(data)! Stack size is now \(size)")
       }
       
       func pop() -> String? {
-        let node = stack?.remove()
+        let node = list?.remove()
         if node != nil {
           size -= 1
         }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-class SwapNodesTest: Testable {
+class ArticleSwappingElementsInALinkedList: Testable {
   
   override func run() {
     
-    func swapNodes(of list: LinkedList, index1: Int, index2: Int) {
+    func swapNodes(of list: LinkedList, at index1: Int, and index2: Int) {
 
       print("Swapping \(index1) and \(index2)")
       var node1Prev: Node?
@@ -67,24 +67,24 @@ class SwapNodesTest: Testable {
       testList4.append(String(i))
     }
     print(testList1)
-    swapNodes(of: testList1, index1: 2, index2: 4)
+    swapNodes(of: testList1, at: 2, and: 4)
     print(testList1)
     print("tail is \(String(describing: testList1.tail!)) head is \(String(describing: testList1.head!))")
     
     print(testList2)
-    swapNodes(of: testList2, index1: 0, index2: 5)
+    swapNodes(of: testList2, at: 0, and: 5)
     print(testList2)
     print("tail is \(String(describing: testList2.tail!)) head is \(String(describing: testList2.head!))")
     
     print(testList3)
-    swapNodes(of: testList3, index1: 2, index2: 9)
+    swapNodes(of: testList3, at: 2, and: 9)
     print(testList3)
     print("tail is \(String(describing: testList3.tail!)) head is \(String(describing: testList3.head!))")
     
     print("edge case not covered")
     print(testList4)
     print("tail is \(String(describing: testList4.tail!)) head is \(String(describing: testList4.head!))")
-    swapNodes(of: testList4, index1: 4, index2: 0)
+    swapNodes(of: testList4, at: 4, and: 0)
     print(testList4)
     print("tail is \(String(describing: testList4.tail!))")
   }

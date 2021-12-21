@@ -26,7 +26,7 @@
 		C1D7D1C72758E67E00EA4262 /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1C62758E67E00EA4262 /* TestCode.swift */; };
 		C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1DA2758E8B000EA4262 /* Testable.swift */; };
 		C1D7D1E42758E8E800EA4262 /* GermanCarsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */; };
-		C1D7D1EC2758E8F500EA4262 /* SwapNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1EB2758E8F500EA4262 /* SwapNodesTest.swift */; };
+		C1D7D1EC2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */; };
 		C1D7D1FA275914F700EA4262 /* TwoPointerLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +73,7 @@
 		C1D7D1C62758E67E00EA4262 /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
 		C1D7D1DA2758E8B000EA4262 /* Testable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testable.swift; sourceTree = "<group>"; };
 		C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanCarsTest.swift; sourceTree = "<group>"; };
-		C1D7D1EB2758E8F500EA4262 /* SwapNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapNodesTest.swift; sourceTree = "<group>"; };
+		C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSwappingElementsInALinkedList.swift; sourceTree = "<group>"; };
 		C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPointerLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,7 @@
 			children = (
 				C1D7D1DA2758E8B000EA4262 /* Testable.swift */,
 				C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */,
-				C1D7D1EB2758E8F500EA4262 /* SwapNodesTest.swift */,
+				C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */,
 				C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */,
 				C15A5503276A9828002014E2 /* BasicNodesTest.swift */,
 				C15A5507276A9E87002014E2 /* BasicQueueTest.swift */,
@@ -329,7 +329,7 @@
 				C110617C276BB991003DDD30 /* Queue.swift in Sources */,
 				C1106178276BB850003DDD30 /* Node.swift in Sources */,
 				C1D7D1FA275914F700EA4262 /* TwoPointerLinkedList.swift in Sources */,
-				C1D7D1EC2758E8F500EA4262 /* SwapNodesTest.swift in Sources */,
+				C1D7D1EC2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift in Sources */,
 				C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */,
 				C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */,
 				C11527E7276B8F3600A6A88F /* BasicStackTest.swift in Sources */,
