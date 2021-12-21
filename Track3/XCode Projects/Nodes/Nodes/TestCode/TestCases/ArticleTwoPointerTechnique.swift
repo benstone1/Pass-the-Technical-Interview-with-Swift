@@ -1,5 +1,5 @@
 //
-//  TwoPointerLinkedList.swift
+//  ArticleTwoPointerTechnique.swift
 //  Nodes
 //
 //  Created by Robert Pascazio on 12/2/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TwoPointerLinkedList : Testable {
+class ArticleTwoPointerTechnique : Testable {
   
   func getNode(from list:LinkedList, at n:Int) -> Node? {
     var linkedListArray = [Node?]()

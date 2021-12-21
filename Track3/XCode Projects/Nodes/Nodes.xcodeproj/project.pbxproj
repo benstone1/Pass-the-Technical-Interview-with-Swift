@@ -27,7 +27,7 @@
 		C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1DA2758E8B000EA4262 /* Testable.swift */; };
 		C1D7D1E42758E8E800EA4262 /* GermanCarsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */; };
 		C1D7D1EC2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */; };
-		C1D7D1FA275914F700EA4262 /* TwoPointerLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */; };
+		C1D7D1FA275914F700EA4262 /* ArticleTwoPointerTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7D1F9275914F700EA4262 /* ArticleTwoPointerTechnique.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		C1D7D1DA2758E8B000EA4262 /* Testable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testable.swift; sourceTree = "<group>"; };
 		C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanCarsTest.swift; sourceTree = "<group>"; };
 		C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSwappingElementsInALinkedList.swift; sourceTree = "<group>"; };
-		C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPointerLinkedList.swift; sourceTree = "<group>"; };
+		C1D7D1F9275914F700EA4262 /* ArticleTwoPointerTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTwoPointerTechnique.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,17 @@
 				C1106177276BB850003DDD30 /* Node.swift */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		C1CF7E9E27724A8E001221F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */,
+				C15A5503276A9828002014E2 /* BasicNodesTest.swift */,
+				C15A5507276A9E87002014E2 /* BasicQueueTest.swift */,
+				C11527E6276B8F3600A6A88F /* BasicStackTest.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		C1D7D1872758E61400EA4262 = {
@@ -179,13 +190,10 @@
 		C1D7D1E22758E8D100EA4262 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				C1CF7E9E27724A8E001221F2 /* Other */,
 				C1D7D1DA2758E8B000EA4262 /* Testable.swift */,
-				C1D7D1E32758E8E800EA4262 /* GermanCarsTest.swift */,
 				C1D7D1EB2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift */,
-				C1D7D1F9275914F700EA4262 /* TwoPointerLinkedList.swift */,
-				C15A5503276A9828002014E2 /* BasicNodesTest.swift */,
-				C15A5507276A9E87002014E2 /* BasicQueueTest.swift */,
-				C11527E6276B8F3600A6A88F /* BasicStackTest.swift */,
+				C1D7D1F9275914F700EA4262 /* ArticleTwoPointerTechnique.swift */,
 				C19BE366277228320065D670 /* LessonStacksSwift.swift */,
 			);
 			path = TestCases;
@@ -328,7 +336,7 @@
 				C1D7D1E42758E8E800EA4262 /* GermanCarsTest.swift in Sources */,
 				C110617C276BB991003DDD30 /* Queue.swift in Sources */,
 				C1106178276BB850003DDD30 /* Node.swift in Sources */,
-				C1D7D1FA275914F700EA4262 /* TwoPointerLinkedList.swift in Sources */,
+				C1D7D1FA275914F700EA4262 /* ArticleTwoPointerTechnique.swift in Sources */,
 				C1D7D1EC2758E8F500EA4262 /* ArticleSwappingElementsInALinkedList.swift in Sources */,
 				C1D7D1DB2758E8B000EA4262 /* Testable.swift in Sources */,
 				C1D7D1982758E61400EA4262 /* ViewController.swift in Sources */,
