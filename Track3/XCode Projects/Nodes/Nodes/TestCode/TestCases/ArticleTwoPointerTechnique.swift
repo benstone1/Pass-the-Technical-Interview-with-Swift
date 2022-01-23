@@ -23,7 +23,7 @@ class ArticleTwoPointerTechnique : Testable {
     var current:Node? = nil
     var tailSeeker = list.head
     var count = 0
-    while (tailSeeker != nil) {
+    while tailSeeker != nil {
       if count == n - 1 {
         current = tailSeeker
         break
@@ -38,9 +38,9 @@ class ArticleTwoPointerTechnique : Testable {
     var fast = list.head
     var slow = list.head
     
-    while (fast != nil) {
+    while fast != nil {
       fast = fast?.next
-      if (fast != nil) {
+      if fast != nil {
         fast = fast?.next
         slow = slow?.next
       }
@@ -53,9 +53,9 @@ class ArticleTwoPointerTechnique : Testable {
     var fast = list.head
     var slow = list.head
     
-    while (fast != nil) {
+    while fast != nil {
       fast = fast?.next
-      if (count % 2 != 0) {
+      if count % 2 != 0 {
         slow = slow?.next
       }
       count += 1
