@@ -79,35 +79,35 @@ class LinkedList {
 extension LinkedList {
   func add(_ data: String) {
     let newHead = Node(data: data)
-      let current = head
-      head = newHead
-      if current != nil {
-        head?.next = current
-      }
+    let current = head
+    head = newHead
+    if current != nil {
+      head?.next = current
+    }
   }
-
+  
   func remove() -> Node? {
-      let removedHead = head
-      if removedHead != nil {
-        head = removedHead?.next
-        removedHead?.next = nil
-      }
-      return removedHead
+    let removedHead = head
+    if removedHead != nil {
+      head = removedHead?.next
+      removedHead?.next = nil
+    }
+    return removedHead
   }
 }
 
 extension LinkedList: CustomStringConvertible {
-    var description: String {
-        return head?.description ?? "nil"
-    }
+  var description: String {
+    return head?.description ?? "nil"
+  }
 }
 
 class Stack {
-
+  
   var list: LinkedList?
   var size:Int
   var maximumSize:Int
-
+  
   init(maximumSize:Int = Int.max) {
     list = LinkedList()
     size = 0
@@ -137,14 +137,14 @@ class Stack {
     }
     return data
   }
-
+  
   func hasSpace() -> Bool {
     if size < maximumSize {
       return true
     }
     return false
   }
-
+  
   func isEmpty() -> Bool {
     if size == 0 {
       return true
