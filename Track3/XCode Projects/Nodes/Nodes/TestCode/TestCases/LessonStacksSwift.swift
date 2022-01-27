@@ -108,6 +108,15 @@ class LessonStacksSwift : Testable {
         print("Removed \(node?.data ?? "unknown value")! Stack size is now \(size)")
         return node?.data
       }
+      
+      func peek() -> String? {
+        var data:String? = nil
+        let node = list?.head
+        if node != nil {
+          data = node?.data
+        }
+        return data
+      }
     }
     let bracelets = Stack()
     bracelets.push("silver")
