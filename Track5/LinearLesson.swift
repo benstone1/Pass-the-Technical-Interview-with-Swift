@@ -2,79 +2,71 @@ import Foundation
 
 // Lesson 1 - build out linear search
 
-func linearSearch<T: Equatable>(allOf list: [T], forItem item: T) -> Int? {
-  for (index, object) in list.enumerated() where object == item {
+func firstIndex<T: Equatable>(of target: T, in arr: [T]) -> Int? {
+  for (index, value) in arr.enumerated() where value == target {
     return index
   }
   return nil
 }
 
 let values = [5, 2, 4, 7]
-let item = 2
-if let index = linearSearch(allOf:values, forItem:item) {
-  print("Item found at index \(index)")
+let targetValue = 2
+if let index = firstIndex(of:targetValue, in:values) {
+  print("Value found at index \(index)")
 } else {
-  print("No Item found")
+  print("Value not found")
 }
 
 // Lesson 2 - calling
 
-let numberList = [ 10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
-let targetNumber = 33
-
-func linearSearch2<T: Equatable>(allOf list: [T], forItem item: T) -> Int? {
-
-  for (index, object) in list.enumerated() where object == item {
+func firstIndex2<T: Equatable>(of target: T, in arr: [T]) -> Int? {
+  for (index, value) in arr.enumerated() where value == target {
     return index
   }
   return nil
 }
 
 // Call the function below
-if let index = linearSearch2(allOf:numberList, forItem:targetNumber) {
-  print("Item found at index \(index)")
+let values2 = [ 10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
+let targetValue2 = 33
+if let index = firstIndex2(of:targetValue2, in:values2) {
+  print("Value found at index \(index)")
 } else {
-  print("No Item found")
+  print("Value not found")
 }
 
 // Lesson 3 : Finding multiple occurances
 
-let tourLocations = [ "New York City", "Los Angeles", "Bangkok", "Istanbul", "London", "New York City", "Toronto"]
-let targetCity = "New York City"
-
-func searchOccurances<T: Equatable>(from list: [T], ofItem item: T) -> Int? {
+func allIndices<T: Equatable>(matching target: T, in arr: [T]) -> [Int]? {
   var matches = [Int]()
-  list.enumerated().forEach { (index, element) in
-    if element == item {
-      matches.append(index)
-    }
+  for (index, value) in arr.enumerated() where value == target {
+    matches.append(index)
   }
-  return matches.count > 0 ? matches.count : nil
+  return matches
 }
 
-if let tourStops = searchOccurances(from: tourLocations, ofItem: targetCity) {
-  print("There are \(tourStops) stops on the tour.")
+let tourLocations = [ "New York City", "Los Angeles", "Bangkok", "Istanbul", "London", "New York City", "Toronto"]
+let targetCity = "New York City"
+if let tourStops = allIndices(matching: targetCity, in: tourLocations) {
+  print("There are \(tourStops.count) stops on the tour.")
 } else {
   print("No tour stops found.")
 }
 
 // Lesson 4 : Maximum Value
-let testScores = [88, 93, 75, 100, 380, 67, 71, 92, 90, 83]
-
-func searchMaximumValue<T: Comparable>(from list: [T]) -> Int? {
-  guard list.count > 0 else {
+func maximumValue<T: Comparable>(in arr: [T]) -> T? {
+  guard arr.isEmpty == false else {
     return nil
   }
-  var maximumScoreIndex = 0
-  list.enumerated().forEach { (index, element) in
-    if element > list[maximumScoreIndex] {
-      maximumScoreIndex = index
-    }
+  var max = arr[0]
+  for value in arr where value > max {
+    max = value
   }
-  return maximumScoreIndex
+  return max
 }
-if let topScore = searchMaximumValue(from: testScores) {
-  print("The top score was at index \(topScore).")
+let testScores = [88, 93, 75, 100, 380, 67, 71, 92, 90, 83]
+if let topScore = maximumValue(in: testScores) {
+  print("The top score is \(topScore).")
 } else {
   print("No scores found.")
 }
