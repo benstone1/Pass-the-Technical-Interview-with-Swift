@@ -37,7 +37,7 @@ if let index = firstIndex2(of:targetValue2, in:values2) {
 
 // Lesson 3 : Finding multiple occurances
 
-func allIndices<T: Equatable>(matching target: T, in arr: [T]) -> [Int]? {
+func allIndices<T: Equatable>(matching target: T, in arr: [T]) -> [Int] {
   var matches = [Int]()
   for (index, value) in arr.enumerated() where value == target {
     matches.append(index)
@@ -47,7 +47,8 @@ func allIndices<T: Equatable>(matching target: T, in arr: [T]) -> [Int]? {
 
 let tourLocations = [ "New York City", "Los Angeles", "Bangkok", "Istanbul", "London", "New York City", "Toronto"]
 let targetCity = "New York City"
-if let tourStops = allIndices(matching: targetCity, in: tourLocations) {
+let tourStops = allIndices(matching: targetCity, in: tourLocations)
+if tourStops.count > 0 {
   print("There are \(tourStops.count) stops on the tour.")
 } else {
   print("No tour stops found.")
