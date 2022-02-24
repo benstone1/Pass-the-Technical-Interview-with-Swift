@@ -56,7 +56,7 @@ if tourStops.count > 0 {
 
 // Lesson 4 : Maximum Value
 func maximumValue<T: Comparable>(in arr: [T]) -> T? {
-  guard arr.isEmpty == false else {
+  guard !arr.isEmpty else {
     return nil
   }
   var max = arr[0]
