@@ -20,7 +20,7 @@ class GraphNode {
 }
 extension GraphNode: Equatable {
   static func == (lhs: GraphNode, rhs: GraphNode) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode: CustomStringConvertible {
@@ -29,7 +29,7 @@ extension GraphNode: CustomStringConvertible {
   }
 }
 
-class GraphEdge {
+struct GraphEdge {
   let nodeOne: GraphNode
   let nodeTwo: GraphNode
   var weight: Int? = nil
@@ -39,7 +39,7 @@ class GraphEdge {
     self.nodeTwo = nodeTwo
   }
   
-  convenience init(nodeOne: GraphNode, nodeTwo: GraphNode, weight: Int) {
+  init(nodeOne: GraphNode, nodeTwo: GraphNode, weight: Int) {
     self.init(nodeOne: nodeOne, nodeTwo: nodeTwo)
     self.weight = weight
   }
@@ -130,7 +130,7 @@ class GraphNode1a {
 }
 extension GraphNode1a: Equatable {
   static func == (lhs: GraphNode1a, rhs: GraphNode1a) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode1a: CustomStringConvertible {
@@ -176,7 +176,7 @@ class GraphNode1b {
 }
 extension GraphNode1b: Equatable {
   static func == (lhs: GraphNode1b, rhs: GraphNode1b) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode1b: CustomStringConvertible {
@@ -185,7 +185,7 @@ extension GraphNode1b: CustomStringConvertible {
   }
 }
 
-class GraphEdge1b {
+struct GraphEdge1b {
   let nodeOne: GraphNode1b
   let nodeTwo: GraphNode1b
   
@@ -262,7 +262,7 @@ class GraphNode3a {
 }
 extension GraphNode3a: Equatable {
   static func == (lhs: GraphNode3a, rhs: GraphNode3a) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode3a: CustomStringConvertible {
@@ -271,7 +271,7 @@ extension GraphNode3a: CustomStringConvertible {
   }
 }
 
-class GraphEdge3a {
+struct GraphEdge3a {
   let nodeOne: GraphNode3a
   let nodeTwo: GraphNode3a
   
@@ -345,7 +345,7 @@ class GraphNode3b {
 }
 extension GraphNode3b: Equatable {
   static func == (lhs: GraphNode3b, rhs: GraphNode3b) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode3b: CustomStringConvertible {
@@ -354,7 +354,7 @@ extension GraphNode3b: CustomStringConvertible {
   }
 }
 
-class GraphEdge3b {
+struct GraphEdge3b {
   let nodeOne: GraphNode3b
   let nodeTwo: GraphNode3b
   
@@ -451,7 +451,7 @@ class GraphNode6a {
 }
 extension GraphNode6a: Equatable {
   static func == (lhs: GraphNode6a, rhs: GraphNode6a) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode6a: CustomStringConvertible {
@@ -460,7 +460,7 @@ extension GraphNode6a: CustomStringConvertible {
   }
 }
 
-class GraphEdge6a {
+struct GraphEdge6a {
   let nodeOne: GraphNode6a
   let nodeTwo: GraphNode6a
   
@@ -534,7 +534,7 @@ class GraphNode6b {
 }
 extension GraphNode6b: Equatable {
   static func == (lhs: GraphNode6b, rhs: GraphNode6b) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode6b: CustomStringConvertible {
@@ -543,7 +543,7 @@ extension GraphNode6b: CustomStringConvertible {
   }
 }
 
-class GraphEdge6b {
+struct GraphEdge6b {
   let nodeOne: GraphNode6b
   let nodeTwo: GraphNode6b
   
@@ -562,17 +562,17 @@ class Graph6b {
     self.edges = []
   }
   
-  func addEdge(_ nodeOne: GraphNode6b, _ nodeTwo: GraphNode6b, _ bidirectional: Bool) {
+  func addEdge(from nodeOne: GraphNode6b, to nodeTwo: GraphNode6b, isBidirection: Bool) {
     edges.append(GraphEdge6b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
-    if bidirectional {
+    if isBidirection {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
   func addEdge(_ nodeOne: GraphNode6b, _ neighboringNodes: [(GraphNode6b, Bool)]) {
     for (node, bidirectional) in neighboringNodes {
-      addEdge(nodeOne, node, bidirectional)
+      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
     }
   }
   
@@ -620,7 +620,7 @@ class GraphNode7a {
 }
 extension GraphNode7a: Equatable {
   static func == (lhs: GraphNode7a, rhs: GraphNode7a) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode7a: CustomStringConvertible {
@@ -629,7 +629,7 @@ extension GraphNode7a: CustomStringConvertible {
   }
 }
 
-class GraphEdge7a {
+struct GraphEdge7a {
   let nodeOne: GraphNode7a
   let nodeTwo: GraphNode7a
   
@@ -648,17 +648,17 @@ class Graph7a {
     self.edges = []
   }
   
-  func addEdge(_ nodeOne: GraphNode7a, _ nodeTwo: GraphNode7a, _ bidirectional: Bool) {
+  func addEdge(from nodeOne: GraphNode7a, to nodeTwo: GraphNode7a, isBidirection: Bool) {
     edges.append(GraphEdge7a(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
-    if bidirectional {
+    if isBidirection {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
   func addEdge(_ nodeOne: GraphNode7a, _ neighboringNodes: [(GraphNode7a, Bool)]) {
     for (node, bidirectional) in neighboringNodes {
-      addEdge(nodeOne, node, bidirectional)
+      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
     }
   }
   
@@ -705,7 +705,7 @@ class GraphNode7b {
 }
 extension GraphNode7b: Equatable {
   static func == (lhs: GraphNode7b, rhs: GraphNode7b) -> Bool {
-      lhs.data == rhs.data && lhs.neighboringNodes == rhs.neighboringNodes
+      return lhs === rhs
   }
 }
 extension GraphNode7b: CustomStringConvertible {
@@ -714,7 +714,7 @@ extension GraphNode7b: CustomStringConvertible {
   }
 }
 
-class GraphEdge7b {
+struct GraphEdge7b {
   let nodeOne: GraphNode7b
   let nodeTwo: GraphNode7b
   var weight: Int? = nil
@@ -724,7 +724,7 @@ class GraphEdge7b {
     self.nodeTwo = nodeTwo
   }
   
-  convenience init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int) {
+  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int) {
     self.init(nodeOne: nodeOne, nodeTwo: nodeTwo)
     self.weight = weight
   }
@@ -739,17 +739,17 @@ class Graph7b {
     self.edges = []
   }
   
-  func addEdge(_ nodeOne: GraphNode7b, _ nodeTwo: GraphNode7b, _ bidirectional: Bool) {
+  func addEdge(from nodeOne: GraphNode7b, to nodeTwo: GraphNode7b, isBidirection: Bool) {
     edges.append(GraphEdge7b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
-    if bidirectional {
+    if isBidirection {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
   func addEdge(_ nodeOne: GraphNode7b, _ neighboringNodes: [(GraphNode7b, Bool)]) {
     for (node, bidirectional) in neighboringNodes {
-      addEdge(nodeOne, node, bidirectional)
+      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
     }
   }
   

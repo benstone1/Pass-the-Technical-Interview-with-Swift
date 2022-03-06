@@ -1,29 +1,53 @@
 func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
-    var mergedArray = [Int]()
-    var leftCopy = leftArray
-    var rightCopy = rightArray
-
-    while leftCopy.count > 0 && rightCopy.count > 0 {
-        let nextValue = leftCopy.first! < rightCopy.first! ? leftCopy.removeFirst() : rightCopy.removeFirst()
-        mergedArray.append(nextValue)
+  var leftIndex = 0
+  var rightIndex = 0
+  var orderedArray: [Int] = []
+  
+  while leftIndex < leftArray.count && rightIndex < rightArray.count {
+    let leftElement = leftArray[leftIndex]
+    let rightElement = rightArray[rightIndex]
+    
+    if leftElement < rightElement {
+      orderedArray.append(leftElement)
+      leftIndex += 1
+    } else if leftElement > rightElement {
+      orderedArray.append(rightElement)
+      rightIndex += 1
+    } else {
+      orderedArray.append(leftElement)
+      leftIndex += 1
+      orderedArray.append(rightElement)
+      rightIndex += 1
     }
+  }
+    
+  while leftIndex < leftArray.count {
+    orderedArray.append(leftArray[leftIndex])
+    leftIndex += 1
+  }
 
-    return mergedArray + leftCopy + rightCopy
+  while rightIndex < rightArray.count {
+    orderedArray.append(rightArray[rightIndex])
+    rightIndex += 1
+  }
+  
+  return orderedArray
 }
 
 func mergeSort(_ inputArray: [Int]) -> [Int] {
-    guard inputArray.count > 1 else {
-        return inputArray
-    }
+  guard inputArray.count > 1 else {
+      return inputArray
+  }
 
-    let midIndex = inputArray.count/2
-    let leftArray = Array(inputArray[0..<midIndex])
-    let rightArray = Array(inputArray[midIndex..<inputArray.count])
+  let midIndex = inputArray.count/2
+  let leftArray = Array(inputArray[0..<midIndex])
+  let rightArray = Array(inputArray[midIndex..<inputArray.count])
+  print(leftArray, rightArray)
 
-    let leftMerge = mergeSort(leftArray)
-    let rightMerge = mergeSort(rightArray)
+  let leftMerge = mergeSort(leftArray)
+  let rightMerge = mergeSort(rightArray)
 
-    return merge(leftArray: leftMerge, rightArray: rightMerge)
+  return merge(leftArray: leftMerge, rightArray: rightMerge)
 }
 
 var countBackwards = [10, 8, 3, 1, -5]
