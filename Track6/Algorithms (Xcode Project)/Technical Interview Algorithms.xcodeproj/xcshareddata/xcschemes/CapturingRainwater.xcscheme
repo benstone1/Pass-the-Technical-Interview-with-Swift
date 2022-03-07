@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5241CD6A27CD863C0074BDE2"
-               BuildableName = "Fibonacci"
-               BlueprintName = "Fibonacci"
+               BlueprintIdentifier = "52A30D2C27D12EAC0000F37F"
+               BuildableName = "CapturingRainwater"
+               BlueprintName = "CapturingRainwater"
                ReferencedContainer = "container:Technical Interview Algorithms.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableAddressSanitizer = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "520F4A9627CDD9B6001B17A4"
-               BuildableName = "FibonacciBenchmarks.xctest"
-               BlueprintName = "FibonacciBenchmarks"
+               BlueprintIdentifier = "52A30D3727D12F010000F37F"
+               BuildableName = "CapturingRainwaterBenchmarks.xctest"
+               BlueprintName = "CapturingRainwaterBenchmarks"
                ReferencedContainer = "container:Technical Interview Algorithms.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -55,9 +54,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5241CD6A27CD863C0074BDE2"
-            BuildableName = "Fibonacci"
-            BlueprintName = "Fibonacci"
+            BlueprintIdentifier = "52A30D2C27D12EAC0000F37F"
+            BuildableName = "CapturingRainwater"
+            BlueprintName = "CapturingRainwater"
             ReferencedContainer = "container:Technical Interview Algorithms.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,9 +71,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5241CD6A27CD863C0074BDE2"
-            BuildableName = "Fibonacci"
-            BlueprintName = "Fibonacci"
+            BlueprintIdentifier = "52A30D2C27D12EAC0000F37F"
+            BuildableName = "CapturingRainwater"
+            BlueprintName = "CapturingRainwater"
             ReferencedContainer = "container:Technical Interview Algorithms.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
