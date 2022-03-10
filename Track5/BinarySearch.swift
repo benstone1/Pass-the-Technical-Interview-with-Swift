@@ -1,59 +1,23 @@
 import Foundation
 
-func binarySearch<T: Comparable>(array: [T], key: T) -> Int? {
-  var lowerBound = 0
-  var upperBound = array.count
-  
-  while lowerBound < upperBound {
-    let midIndex = lowerBound + (upperBound - lowerBound) / 2
-
-    switch array[midIndex] {
-      case _ where array[midIndex] == key:
-        return midIndex
-      case _ where array[midIndex] < key:
-        lowerBound = midIndex + 1
-      default:
-        upperBound = midIndex
-    }
-
-/*
-    if array[midIndex] == key {
-      return midIndex
-    } else if array[midIndex] < key {
-      lowerBound = midIndex + 1
-    } else {
-      upperBound = midIndex
-    }*/
-  }
-  
-  return nil
-}
-
-func binarySearch2<T: Comparable>(array: [T], key: T, range: Range<Int>) -> Int? {
-  if range.lowerBound >= range.upperBound {
+func binarySearch<T: Comparable>(for key: T, in arr: [T], withRange range: Range<Int>) -> Int? {
+  guard range.lowerBound < range.upperBound else {
     return nil
-  } else {
-    let midIndex = range.lowerBound + (range.upperBound - range.lowerBound) / 2
-    
-    switch array[midIndex] {
-      case _ where array[midIndex] > key:
-        return binarySearch2(array: array, key: key, range: range.lowerBound ..< midIndex)
-      case _ where array[midIndex] < key:
-        return binarySearch2(array: array, key: key, range: midIndex + 1 ..< range.upperBound)
-      default:
-        return midIndex
-    }
-    
-   /* if array[midIndex] > key {
-      return binarySearch2(array: array, key: key, range: range.lowerBound ..< midIndex)
-    } else if array[midIndex] < key {
-      return binarySearch2(array: array, key: key, range: (midIndex + 1)..<range.upperBound)
-    } else {
-      return midIndex
-    }*/
   }
-}
 
+  let midIndex = range.lowerBound + (range.upperBound - range.lowerBound) / 2
+  if arr[midIndex] == key {
+    return midIndex
+  }
+
+  let newRange: Range<Int>
+  if arr[midIndex] < key {
+     newRange = midIndex + 1 ..< range.upperBound
+  } else {
+     newRange = range.lowerBound ..< midIndex
+  }
+  return binarySearch(for:key, in:arr, withRange:newRange)
+}
 
 let data = [1, 14, 23, 33, 56, 100, 110, 125, 140]
-print("\(binarySearch2(array:data, key:140, range: 0 ..< data.count)!)")
+print("\(binarySearch(for:23, in:data, withRange:0 ..< data.count)!)")
