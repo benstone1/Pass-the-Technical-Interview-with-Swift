@@ -10,28 +10,13 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     if leftElement < rightElement {
       orderedArray.append(leftElement)
       leftIndex += 1
-    } else if leftElement > rightElement {
-      orderedArray.append(rightElement)
-      rightIndex += 1
     } else {
-      orderedArray.append(leftElement)
-      leftIndex += 1
       orderedArray.append(rightElement)
       rightIndex += 1
     }
   }
-    
-  while leftIndex < leftArray.count {
-    orderedArray.append(leftArray[leftIndex])
-    leftIndex += 1
-  }
-
-  while rightIndex < rightArray.count {
-    orderedArray.append(rightArray[rightIndex])
-    rightIndex += 1
-  }
   
-  return orderedArray
+  return orderedArray + Array(leftArray.dropFirst(leftIndex)) + Array(rightArray.dropFirst(rightIndex))
 }
 
 func mergeSort(_ inputArray: [Int]) -> [Int] {
