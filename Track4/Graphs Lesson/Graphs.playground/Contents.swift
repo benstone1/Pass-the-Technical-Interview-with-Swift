@@ -204,14 +204,14 @@ class Graph1b {
     self.edges = []
   }
   
-  func addEdge(_ nodeOne: GraphNode1b, _ nodeTwo: GraphNode1b) {
+  func addEdge(from nodeOne: GraphNode1b, to nodeTwo: GraphNode1b) {
     edges.append(GraphEdge1b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
   }
   
-  func addEdge(_ nodeOne: GraphNode1b, _ neighboringNodes: [GraphNode1b]) {
+  func addEdge(from nodeOne: GraphNode1b, to neighboringNodes: [GraphNode1b]) {
     for node in neighboringNodes {
-      addEdge(nodeOne, node)
+      addEdge(from: nodeOne, to: node)
     }
   }
   
@@ -239,193 +239,205 @@ class Graph1b {
 // No code - just show and discuss the different Graphs -> 1. Acyclic 2. Cyclic && a. Undirected b. Directed 2b. Weighted
 
 // 3: Acyclic Graphs -- Add: 1. Default bidirectional (Identifying that even acyclic graphs are different than trees)
-// 3.a
-class GraphNode3a {
-    
-  var data: String
-  var neighboringNodes: [GraphNode3a]
-  
-  init(data: String) {
-      self.data = data
-      self.neighboringNodes = []
-  }
-  
-  func addNeighbor(_ newNeighbor: GraphNode3a) {
-      neighboringNodes.append(newNeighbor)
-  }
-  
-  func removeNeighbor(_ nodeToRemove: GraphNode3a) {
-    if let index = neighboringNodes.firstIndex(where: { $0 == nodeToRemove }) {
-      neighboringNodes.remove(at: index)
-    }
-  }
-}
-extension GraphNode3a: Equatable {
-  static func == (lhs: GraphNode3a, rhs: GraphNode3a) -> Bool {
-      return lhs === rhs
-  }
-}
-extension GraphNode3a: CustomStringConvertible {
-  var description: String {
-      return "\(data)"
-  }
-}
-
-struct GraphEdge3a {
-  let nodeOne: GraphNode3a
-  let nodeTwo: GraphNode3a
-  
-  init(nodeOne: GraphNode3a, nodeTwo: GraphNode3a) {
-    self.nodeOne = nodeOne
-    self.nodeTwo = nodeTwo
-  }
-}
-
-class Graph3a {
-  var nodes: [GraphNode3a]
-  var edges: [GraphEdge3a]
-    
-  init(nodes: [GraphNode3a]) {
-    self.nodes = nodes
-    self.edges = []
-  }
-  
-  func addEdge(_ nodeOne: GraphNode3a, _ nodeTwo: GraphNode3a) {
-    edges.append(GraphEdge3a(nodeOne: nodeOne, nodeTwo: nodeTwo))
-    nodeOne.addNeighbor(nodeTwo)
-    // Add your codde here
-  }
-  
-  func addEdge(_ nodeOne: GraphNode3a, _ neighboringNodes: [GraphNode3a]) {
-    for node in neighboringNodes {
-      addEdge(nodeOne, node)
-    }
-  }
-  
-  func removeNode(_ node: GraphNode3a) {
-    if let index = nodes.firstIndex(where: { $0 == node }) {
-      nodes.remove(at: index)
-    }
-    
-    edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
-  }
-  
-  // print Method
-  func print() {
-    for node in nodes {
-      Swift.print("\(node): \(node.neighboringNodes)")
-    }
-  }
-}
-
-// 3.b -- add bidirectional
-class GraphNode3b {
-    
-  var data: String
-  var neighboringNodes: [GraphNode3b]
-  
-  init(data: String) {
-      self.data = data
-      self.neighboringNodes = []
-  }
-  
-  func addNeighbor(_ newNeighbor: GraphNode3b) {
-      neighboringNodes.append(newNeighbor)
-  }
-  
-  func removeNeighbor(_ nodeToRemove: GraphNode3b) {
-    if let index = neighboringNodes.firstIndex(where: { $0 == nodeToRemove }) {
-      neighboringNodes.remove(at: index)
-    }
-  }
-}
-extension GraphNode3b: Equatable {
-  static func == (lhs: GraphNode3b, rhs: GraphNode3b) -> Bool {
-      return lhs === rhs
-  }
-}
-extension GraphNode3b: CustomStringConvertible {
-  var description: String {
-      return "\(data)"
-  }
-}
-
-struct GraphEdge3b {
-  let nodeOne: GraphNode3b
-  let nodeTwo: GraphNode3b
-  
-  init(nodeOne: GraphNode3b, nodeTwo: GraphNode3b) {
-    self.nodeOne = nodeOne
-    self.nodeTwo = nodeTwo
-  }
-}
-
-class Graph3b {
-  var nodes: [GraphNode3b]
-  var edges: [GraphEdge3b]
-    
-  init(nodes: [GraphNode3b]) {
-    self.nodes = nodes
-    self.edges = []
-  }
-  
-  func addEdge(_ nodeOne: GraphNode3b, _ nodeTwo: GraphNode3b) {
-    edges.append(GraphEdge3b(nodeOne: nodeOne, nodeTwo: nodeTwo))
-    nodeOne.addNeighbor(nodeTwo)
-    nodeTwo.addNeighbor(nodeOne)
-  }
-  
-  func addEdge(_ nodeOne: GraphNode3b, _ neighboringNodes: [GraphNode3b]) {
-    for node in neighboringNodes {
-      addEdge(nodeOne, node)
-    }
-  }
-  
-  func removeNode(_ node: GraphNode3b) {
-    if let index = nodes.firstIndex(where: { $0 == node }) {
-      nodes.remove(at: index)
-    }
-    
-    edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
-  }
-  
-  // print Method
-  func print() {
-    for node in nodes {
-      Swift.print("\(node): \(node.neighboringNodes)")
-    }
-  }
-}
-
-let nodeS3b = GraphNode3b(data: "Seattle")
-let nodeNY3b = GraphNode3b(data: "New York")
-let nodeA3b = GraphNode3b(data: "Atlanta")
-let nodeC3b = GraphNode3b(data: "Chicago")
-let graph3b = Graph3b(nodes: [nodeS3b, nodeNY3b, nodeA3b, nodeC3b])
-graph3b.addEdge(nodeS3b, [nodeC3b, nodeNY3b])
-graph3b.addEdge(nodeNY3b, [nodeA3b])
+let nodeCar3a = GraphNode1b(data: "Car")
+let nodeBus3a = GraphNode1b(data: "Bus")
+let nodeBike3a = GraphNode1b(data: "Bike")
+let nodeHelicopter3a = GraphNode1b(data: "Helicopter")
+let nodeGas3a = GraphNode1b(data: "Gas")
+let nodeRun3a = GraphNode1b(data: "Run")
+let nodeChange3a = GraphNode1b(data: "Change")
+let nodeSpa3a = GraphNode1b(data: "Spa")
+let nodeHome3a = GraphNode1b(data: "Home")
+let graph3a = Graph1b(nodes: [nodeCar3a, nodeBus3a, nodeBike3a, nodeHelicopter3a, nodeGas3a, nodeRun3a, nodeChange3a, nodeSpa3a, nodeHome3a])
+graph3a.addEdge(from: nodeCar3a, to: nodeGas3a)
+graph3a.addEdge(from: nodeBus3a, to: nodeRun3a)
+graph3a.addEdge(from: nodeBike3a, to: nodeChange3a)
+graph3a.addEdge(from: nodeHelicopter3a, to: nodeHome3a)
+graph3a.addEdge(from: nodeGas3a, to: nodeHome3a)
+graph3a.addEdge(from: nodeRun3a, to: nodeHome3a)
+graph3a.addEdge(from: nodeChange3a, to: nodeHome3a)
+graph3a.addEdge(from: nodeSpa3a, to: nodeHome3a)
 
 
 // 4: Cyclic Graphs:
 // No code -- just talk about how the properties don't change but will identify the uniqueness of cyclic graphs in traversal and searching
-let nodeS4a = GraphNode3b(data: "Seattle")
-let nodeNY4a = GraphNode3b(data: "New York")
-let nodeA4a = GraphNode3b(data: "Atlanta")
-let nodeC4a = GraphNode3b(data: "Chicago")
-let graph4a = Graph3b(nodes: [nodeS4a, nodeNY4a, nodeA4a, nodeC4a])
-graph4a.addEdge(nodeS4a, [nodeC4a, nodeNY4a, nodeA4a])
-graph4a.addEdge(nodeNY4a, [nodeA4a])
+let nodeGarage4a = GraphNode1b(data: "Bike out of Garage")
+let nodeGetOn4a = GraphNode1b(data: "Get on Bike")
+let nodePedal4a = GraphNode1b(data: "Pedal Bike")
+let nodeFall4a = GraphNode1b(data: "Fall off Bike")
+let nodeGetOff4a = GraphNode1b(data: "Get off Bike")
+let graph4a = Graph1b(nodes: [nodeGarage4a, nodeGetOn4a, nodePedal4a, nodeFall4a, nodeGetOff4a])
+graph4a.addEdge(from: nodeGarage4a, to: nodeGetOn4a)
+graph4a.addEdge(from: nodeGetOn4a, to: nodePedal4a)
+graph4a.addEdge(from: nodePedal4a, to: nodeFall4a)
+graph4a.addEdge(from: nodePedal4a, to: nodeGetOff4a)
+graph4a.addEdge(from: nodeFall4a, to: nodeGetOn4a)
 
 // 5: Undirected Graphs
-// No codechange from #3
+class GraphNode5a {
+    
+  var data: String
+  var neighboringNodes: [GraphNode5a]
+  
+  init(data: String) {
+      self.data = data
+      self.neighboringNodes = []
+  }
+  
+  func addNeighbor(_ newNeighbor: GraphNode5a) {
+      neighboringNodes.append(newNeighbor)
+  }
+  
+  func removeNeighbor(_ nodeToRemove: GraphNode5a) {
+    if let index = neighboringNodes.firstIndex(where: { $0 == nodeToRemove }) {
+      neighboringNodes.remove(at: index)
+    }
+  }
+}
+extension GraphNode5a: Equatable {
+  static func == (lhs: GraphNode5a, rhs: GraphNode5a) -> Bool {
+      return lhs === rhs
+  }
+}
+extension GraphNode5a: CustomStringConvertible {
+  var description: String {
+      return "\(data)"
+  }
+}
+
+struct GraphEdge5a {
+  let nodeOne: GraphNode5a
+  let nodeTwo: GraphNode5a
+  
+  init(nodeOne: GraphNode5a, nodeTwo: GraphNode5a) {
+    self.nodeOne = nodeOne
+    self.nodeTwo = nodeTwo
+  }
+}
+
+class Graph5a {
+  var nodes: [GraphNode5a]
+  var edges: [GraphEdge5a]
+    
+  init(nodes: [GraphNode5a]) {
+    self.nodes = nodes
+    self.edges = []
+  }
+  
+  func addEdge(from nodeOne: GraphNode5a, to nodeTwo: GraphNode5a) {
+    edges.append(GraphEdge5a(nodeOne: nodeOne, nodeTwo: nodeTwo))
+    nodeOne.addNeighbor(nodeTwo)
+    // Add your codde here
+  }
+  
+  func addEdge(from nodeOne: GraphNode5a, to neighboringNodes: [GraphNode5a]) {
+    for node in neighboringNodes {
+      addEdge(from: nodeOne, to: node)
+    }
+  }
+  
+  func removeNode(_ node: GraphNode5a) {
+    if let index = nodes.firstIndex(where: { $0 == node }) {
+      nodes.remove(at: index)
+    }
+    
+    edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
+    
+    for neighbor in node.neighboringNodes {
+      neighbor.removeNeighbor(node)
+    }
+  }
+  
+  // print Method
+  func print() {
+    for node in nodes {
+      Swift.print("\(node): \(node.neighboringNodes)")
+    }
+  }
+}
+
+// 5.b -- add bidirectional
+class GraphNode5b {
+    
+  var data: String
+  var neighboringNodes: [GraphNode5b]
+  
+  init(data: String) {
+      self.data = data
+      self.neighboringNodes = []
+  }
+  
+  func addNeighbor(_ newNeighbor: GraphNode5b) {
+      neighboringNodes.append(newNeighbor)
+  }
+  
+  func removeNeighbor(_ nodeToRemove: GraphNode5b) {
+    if let index = neighboringNodes.firstIndex(where: { $0 == nodeToRemove }) {
+      neighboringNodes.remove(at: index)
+    }
+  }
+}
+extension GraphNode5b: Equatable {
+  static func == (lhs: GraphNode5b, rhs: GraphNode5b) -> Bool {
+      return lhs === rhs
+  }
+}
+extension GraphNode5b: CustomStringConvertible {
+  var description: String {
+      return "\(data)"
+  }
+}
+
+struct GraphEdge5b {
+  let nodeOne: GraphNode5b
+  let nodeTwo: GraphNode5b
+  
+  init(nodeOne: GraphNode5b, nodeTwo: GraphNode5b) {
+    self.nodeOne = nodeOne
+    self.nodeTwo = nodeTwo
+  }
+}
+
+class Graph5b {
+  var nodes: [GraphNode5b]
+  var edges: [GraphEdge5b]
+    
+  init(nodes: [GraphNode5b]) {
+    self.nodes = nodes
+    self.edges = []
+  }
+  
+  func addEdge(from nodeOne: GraphNode5b, to nodeTwo: GraphNode5b) {
+    edges.append(GraphEdge5b(nodeOne: nodeOne, nodeTwo: nodeTwo))
+    nodeOne.addNeighbor(nodeTwo)
+    nodeTwo.addNeighbor(nodeOne)
+  }
+  
+  func addEdge(from nodeOne: GraphNode5b, to neighboringNodes: [GraphNode5b]) {
+    for node in neighboringNodes {
+      addEdge(from: nodeOne, to: node)
+    }
+  }
+  
+  func removeNode(_ node: GraphNode5b) {
+    if let index = nodes.firstIndex(where: { $0 == node }) {
+      nodes.remove(at: index)
+    }
+    
+    edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
+    
+    for neighbor in node.neighboringNodes {
+      neighbor.removeNeighbor(node)
+    }
+  }
+  
+  // print Method
+  func print() {
+    for node in nodes {
+      Swift.print("\(node): \(node.neighboringNodes)")
+    }
+  }
+}
 
 // 6: Directed Graphs
 // 6.a
@@ -570,7 +582,7 @@ class Graph6b {
     }
   }
   
-  func addEdge(_ nodeOne: GraphNode6b, _ neighboringNodes: [(GraphNode6b, Bool)]) {
+  func addEdge(from nodeOne: GraphNode6b, to neighboringNodes: [(GraphNode6b, Bool)]) {
     for (node, bidirectional) in neighboringNodes {
       addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
     }
@@ -662,6 +674,14 @@ class Graph7a {
     }
   }
   
+  /*
+  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool, Int?)]) {
+    for (node, bidirectional, weight) in neighboringNodes {
+      addEdge(from: nodeOne, to: node, isBidirection: bidirectional, weight: weight)
+    }
+  }
+   */
+  
   func removeNode(_ node: GraphNode7a) {
     if let index = nodes.firstIndex(where: { $0 == node }) {
       nodes.remove(at: index)
@@ -724,7 +744,7 @@ struct GraphEdge7b {
     self.nodeTwo = nodeTwo
   }
   
-  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int) {
+  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int?) {
     self.init(nodeOne: nodeOne, nodeTwo: nodeTwo)
     self.weight = weight
   }
@@ -739,17 +759,23 @@ class Graph7b {
     self.edges = []
   }
   
-  func addEdge(from nodeOne: GraphNode7b, to nodeTwo: GraphNode7b, isBidirection: Bool) {
-    edges.append(GraphEdge7b(nodeOne: nodeOne, nodeTwo: nodeTwo))
+  func addEdge(from nodeOne: GraphNode7b, to nodeTwo: GraphNode7b, isBidirection: Bool, weight: Int? = nil) {
+    edges.append(GraphEdge7b(nodeOne: nodeOne, nodeTwo: nodeTwo, weight: weight))
     nodeOne.addNeighbor(nodeTwo)
     if isBidirection {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
-  func addEdge(_ nodeOne: GraphNode7b, _ neighboringNodes: [(GraphNode7b, Bool)]) {
+  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool)]) {
     for (node, bidirectional) in neighboringNodes {
       addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
+    }
+  }
+  
+  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool, Int?)]) {
+    for (node, bidirectional, weight) in neighboringNodes {
+      addEdge(from: nodeOne, to: node, isBidirection: bidirectional, weight: weight)
     }
   }
   
@@ -774,7 +800,15 @@ class Graph7b {
 }
 
 // 8: Review
-// 8.a
+let nodeAtlanta = GraphNode7b(data: "Atlanta")
+let nodeNewYork = GraphNode7b(data: "New York")
+let nodeChicago = GraphNode7b(data: "Chicago")
+let nodeOrlando = GraphNode7b(data: "Orlando")
+let nodeLosAngeles = GraphNode7b(data: "Los Angeles")
+let graph7b = Graph7b(nodes: [nodeAtlanta, nodeNewYork, nodeChicago, nodeOrlando, nodeLosAngeles])
+graph7b.addEdge(from: nodeAtlanta, to: [(nodeNewYork, false, 250), (nodeOrlando, false, 80)])
+graph7b.addEdge(from: nodeOrlando, to: [(nodeAtlanta, false, 100), (nodeNewYork, false, 400), (nodeChicago, false, 200)])
+graph7b.addEdge(from: nodeLosAngeles, to: [(nodeChicago, false, 125), (nodeAtlanta, false, 250)])
+graph7b.addEdge(from: nodeChicago, to: nodeNewYork, isBidirection: false, weight: 190)
+graph7b.addEdge(from: nodeNewYork, to: [(nodeLosAngeles, false, 400), (nodeAtlanta, false, 200)])
 
-// 8.b
-// We didn't discuss it, but consider a disconnected graph
