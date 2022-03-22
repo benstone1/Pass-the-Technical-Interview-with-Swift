@@ -1,92 +1,4 @@
-class GraphNode {
-    
-  var data: String
-  var neighboringNodes: [GraphNode]
-  
-  init(data: String) {
-      self.data = data
-      self.neighboringNodes = []
-  }
-  
-  func addNeighbor(_ newNeighbor: GraphNode) {
-      neighboringNodes.append(newNeighbor)
-  }
-  
-  func removeNeighbor(_ nodeToRemove: GraphNode) {
-    if let index = neighboringNodes.firstIndex(where: { $0 == nodeToRemove }) {
-      neighboringNodes.remove(at: index)
-    }
-  }
-}
-extension GraphNode: Equatable {
-  static func == (lhs: GraphNode, rhs: GraphNode) -> Bool {
-      return lhs === rhs
-  }
-}
-extension GraphNode: CustomStringConvertible {
-  var description: String {
-      return "\(data)"
-  }
-}
 
-struct GraphEdge {
-  let nodeOne: GraphNode
-  let nodeTwo: GraphNode
-  var weight: Int? = nil
-  
-  init(nodeOne: GraphNode, nodeTwo: GraphNode) {
-    self.nodeOne = nodeOne
-    self.nodeTwo = nodeTwo
-  }
-  
-  init(nodeOne: GraphNode, nodeTwo: GraphNode, weight: Int) {
-    self.init(nodeOne: nodeOne, nodeTwo: nodeTwo)
-    self.weight = weight
-  }
-}
-
-class Graph {
-  var nodes: [GraphNode]
-  var edges: [GraphEdge]
-    
-  init(nodes: [GraphNode]) {
-    self.nodes = nodes
-    self.edges = []
-  }
-  
-  func addEdge(_ nodeOne: GraphNode, _ nodeTwo: GraphNode, _ bidirectional: Bool) {
-    edges.append(GraphEdge(nodeOne: nodeOne, nodeTwo: nodeTwo))
-    nodeOne.addNeighbor(nodeTwo)
-    if bidirectional {
-      nodeTwo.addNeighbor(nodeOne)
-    }
-  }
-  
-  func addEdge(_ nodeOne: GraphNode, _ neighboringNodes: [(GraphNode, Bool)]) {
-    for (node, bidirectional) in neighboringNodes {
-      addEdge(nodeOne, node, bidirectional)
-    }
-  }
-  
-  func removeNode(_ node: GraphNode) {
-    if let index = nodes.firstIndex(where: { $0 == node }) {
-      nodes.remove(at: index)
-    }
-    
-    edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
-  }
-  
-  // print Method
-  func print() {
-    for node in nodes {
-      Swift.print("\(node): \(node.neighboringNodes)")
-    }
-  }
-}
 
 // 1: Introduction to Graphs
 // 1.a
@@ -146,7 +58,7 @@ class Graph1a {
     self.nodes = nodes
   }
   
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -209,7 +121,7 @@ class Graph1b {
     nodeOne.addNeighbor(nodeTwo)
   }
   
-  func addEdge(from nodeOne: GraphNode1b, to neighboringNodes: [GraphNode1b]) {
+  func addEdges(from nodeOne: GraphNode1b, to neighboringNodes: [GraphNode1b]) {
     for node in neighboringNodes {
       addEdge(from: nodeOne, to: node)
     }
@@ -221,14 +133,11 @@ class Graph1b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -330,7 +239,7 @@ class Graph5a {
     // Add your codde here
   }
   
-  func addEdge(from nodeOne: GraphNode5a, to neighboringNodes: [GraphNode5a]) {
+  func addEdges(from nodeOne: GraphNode5a, to neighboringNodes: [GraphNode5a]) {
     for node in neighboringNodes {
       addEdge(from: nodeOne, to: node)
     }
@@ -342,14 +251,11 @@ class Graph5a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -413,7 +319,7 @@ class Graph5b {
     nodeTwo.addNeighbor(nodeOne)
   }
   
-  func addEdge(from nodeOne: GraphNode5b, to neighboringNodes: [GraphNode5b]) {
+  func addEdges(from nodeOne: GraphNode5b, to neighboringNodes: [GraphNode5b]) {
     for node in neighboringNodes {
       addEdge(from: nodeOne, to: node)
     }
@@ -425,14 +331,11 @@ class Graph5b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -497,7 +400,7 @@ class Graph6a {
     nodeTwo.addNeighbor(nodeOne)
   }
   
-  func addEdge(_ nodeOne: GraphNode6a, _ neighboringNodes: [GraphNode6a]) {
+  func addEdges(_ nodeOne: GraphNode6a, _ neighboringNodes: [GraphNode6a]) {
     for node in neighboringNodes {
       addEdge(nodeOne, node)
     }
@@ -509,14 +412,11 @@ class Graph6a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -574,17 +474,17 @@ class Graph6b {
     self.edges = []
   }
   
-  func addEdge(from nodeOne: GraphNode6b, to nodeTwo: GraphNode6b, isBidirection: Bool) {
+  func addEdge(from nodeOne: GraphNode6b, to nodeTwo: GraphNode6b, isBidirectional: Bool) {
     edges.append(GraphEdge6b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
-    if isBidirection {
+    if isBidirectional {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
-  func addEdge(from nodeOne: GraphNode6b, to neighboringNodes: [(GraphNode6b, Bool)]) {
-    for (node, bidirectional) in neighboringNodes {
-      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
+  func addEdges(from nodeOne: GraphNode6b, to neighboringNodes: [(node: GraphNode6b, isBidirectional: Bool)]) {
+    for (node, isBidirectional) in neighboringNodes {
+      addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional)
     }
   }
   
@@ -594,14 +494,11 @@ class Graph6b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -660,27 +557,19 @@ class Graph7a {
     self.edges = []
   }
   
-  func addEdge(from nodeOne: GraphNode7a, to nodeTwo: GraphNode7a, isBidirection: Bool) {
+  func addEdge(from nodeOne: GraphNode7a, to nodeTwo: GraphNode7a, isBidirectional: Bool) {
     edges.append(GraphEdge7a(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
-    if isBidirection {
+    if isBidirectional {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
-  func addEdge(_ nodeOne: GraphNode7a, _ neighboringNodes: [(GraphNode7a, Bool)]) {
-    for (node, bidirectional) in neighboringNodes {
-      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
+  func addEdges(_ nodeOne: GraphNode7a, _ neighboringNodes: [(GraphNode7a, Bool)]) {
+    for (node, isBidirectional) in neighboringNodes {
+      addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional)
     }
   }
-  
-  /*
-  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool, Int?)]) {
-    for (node, bidirectional, weight) in neighboringNodes {
-      addEdge(from: nodeOne, to: node, isBidirection: bidirectional, weight: weight)
-    }
-  }
-   */
   
   func removeNode(_ node: GraphNode7a) {
     if let index = nodes.firstIndex(where: { $0 == node }) {
@@ -688,14 +577,11 @@ class Graph7a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -739,13 +625,9 @@ struct GraphEdge7b {
   let nodeTwo: GraphNode7b
   var weight: Int? = nil
   
-  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b) {
+  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int?) {
     self.nodeOne = nodeOne
     self.nodeTwo = nodeTwo
-  }
-  
-  init(nodeOne: GraphNode7b, nodeTwo: GraphNode7b, weight: Int?) {
-    self.init(nodeOne: nodeOne, nodeTwo: nodeTwo)
     self.weight = weight
   }
 }
@@ -759,23 +641,17 @@ class Graph7b {
     self.edges = []
   }
   
-  func addEdge(from nodeOne: GraphNode7b, to nodeTwo: GraphNode7b, isBidirection: Bool, weight: Int? = nil) {
+  func addEdge(from nodeOne: GraphNode7b, to nodeTwo: GraphNode7b, isBidirectional: Bool, weight: Int? = nil) {
     edges.append(GraphEdge7b(nodeOne: nodeOne, nodeTwo: nodeTwo, weight: weight))
     nodeOne.addNeighbor(nodeTwo)
-    if isBidirection {
+    if isBidirectional {
       nodeTwo.addNeighbor(nodeOne)
     }
   }
   
-  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool)]) {
-    for (node, bidirectional) in neighboringNodes {
-      addEdge(from: nodeOne, to: node, isBidirection: bidirectional)
-    }
-  }
-  
-  func addEdge(from nodeOne: GraphNode7b, to neighboringNodes: [(GraphNode7b, Bool, Int?)]) {
-    for (node, bidirectional, weight) in neighboringNodes {
-      addEdge(from: nodeOne, to: node, isBidirection: bidirectional, weight: weight)
+  func addEdges(from nodeOne: GraphNode7b, to neighboringNodes: [(node: GraphNode7b, isBidirectional: Bool, weight: Int?)]) {
+    for (node, isBidirectional, weight) in neighboringNodes {
+      addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional, weight: weight)
     }
   }
   
@@ -785,14 +661,11 @@ class Graph7b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    
-    for neighbor in node.neighboringNodes {
-      neighbor.removeNeighbor(node)
-    }
+    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
-  func print() {
+  func printGraph() {
     for node in nodes {
       Swift.print("\(node): \(node.neighboringNodes)")
     }
@@ -806,9 +679,8 @@ let nodeChicago = GraphNode7b(data: "Chicago")
 let nodeOrlando = GraphNode7b(data: "Orlando")
 let nodeLosAngeles = GraphNode7b(data: "Los Angeles")
 let graph7b = Graph7b(nodes: [nodeAtlanta, nodeNewYork, nodeChicago, nodeOrlando, nodeLosAngeles])
-graph7b.addEdge(from: nodeAtlanta, to: [(nodeNewYork, false, 250), (nodeOrlando, false, 80)])
-graph7b.addEdge(from: nodeOrlando, to: [(nodeAtlanta, false, 100), (nodeNewYork, false, 400), (nodeChicago, false, 200)])
-graph7b.addEdge(from: nodeLosAngeles, to: [(nodeChicago, false, 125), (nodeAtlanta, false, 250)])
-graph7b.addEdge(from: nodeChicago, to: nodeNewYork, isBidirection: false, weight: 190)
-graph7b.addEdge(from: nodeNewYork, to: [(nodeLosAngeles, false, 400), (nodeAtlanta, false, 200)])
-
+graph7b.addEdges(from: nodeAtlanta, to: [(node: nodeNewYork, isBidirectional: false, weight: 250), (node: nodeOrlando, isBidirectional: false, weight: 80)])
+graph7b.addEdges(from: nodeOrlando, to: [(node: nodeAtlanta, isBidirectional: false, weight: 100), (node: nodeNewYork, isBidirectional: false, weight: 400), (node: nodeChicago, isBidirectional: false, weight: 200)])
+graph7b.addEdges(from: nodeLosAngeles, to: [(node: nodeChicago, isBidirectional: false, weight: 125), (node: nodeAtlanta, isBidirectional: false, weight:250)])
+graph7b.addEdge(from: nodeChicago, to: nodeNewYork, isBidirectional: false, weight: 190)
+graph7b.addEdges(from: nodeNewYork, to: [(node: nodeLosAngeles, isBidirectional: false, weight: 400), (node: nodeAtlanta, isBidirectional: false, weight: 200)])
