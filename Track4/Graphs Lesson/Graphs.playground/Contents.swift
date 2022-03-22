@@ -133,7 +133,7 @@ class Graph1b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -251,7 +251,7 @@ class Graph5a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -331,7 +331,7 @@ class Graph5b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -412,7 +412,7 @@ class Graph6a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -494,7 +494,7 @@ class Graph6b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -577,7 +577,7 @@ class Graph7a {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
@@ -661,7 +661,7 @@ class Graph7b {
     }
     
     edges = edges.filter({ $0.nodeOne != node || $0.nodeTwo != node })
-    node.neighboringNodes.forEach { $0.removeNeighbor(node) }
+    nodes.forEach { $0.removeNeighbor(node) }
   }
   
   // print Method
