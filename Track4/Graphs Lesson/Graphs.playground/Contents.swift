@@ -316,6 +316,7 @@ class Graph5b {
   func addEdge(from nodeOne: GraphNode5b, to nodeTwo: GraphNode5b) {
     edges.append(GraphEdge5b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
+    edges.append(GraphEdge7b(nodeOne: nodeTwo, nodeTwo: nodeOne))
     nodeTwo.addNeighbor(nodeOne)
   }
   
@@ -397,6 +398,7 @@ class Graph6a {
   func addEdge(_ nodeOne: GraphNode6a, _ nodeTwo: GraphNode6a) {
     edges.append(GraphEdge6a(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
+    edges.append(GraphEdge7b(nodeOne: nodeTwo, nodeTwo: nodeOne))
     nodeTwo.addNeighbor(nodeOne)
   }
   
@@ -478,6 +480,7 @@ class Graph6b {
     edges.append(GraphEdge6b(nodeOne: nodeOne, nodeTwo: nodeTwo))
     nodeOne.addNeighbor(nodeTwo)
     if isBidirectional {
+      edges.append(GraphEdge7b(nodeOne: nodeTwo, nodeTwo: nodeOne))
       nodeTwo.addNeighbor(nodeOne)
     }
   }
@@ -645,6 +648,7 @@ class Graph7b {
     edges.append(GraphEdge7b(nodeOne: nodeOne, nodeTwo: nodeTwo, weight: weight))
     nodeOne.addNeighbor(nodeTwo)
     if isBidirectional {
+      edges.append(GraphEdge7b(nodeOne: nodeTwo, nodeTwo: nodeOne, weight: weight))
       nodeTwo.addNeighbor(nodeOne)
     }
   }
