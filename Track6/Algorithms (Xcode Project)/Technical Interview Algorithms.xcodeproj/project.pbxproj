@@ -10,6 +10,10 @@
 		520F4A9E27CDD9BE001B17A4 /* benchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52944A9B27CDCE41009D6A64 /* benchmarks.swift */; };
 		520F4A9F27CDD9DB001B17A4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD6D27CD863C0074BDE2 /* main.swift */; };
 		520F4AA027CDD9DB001B17A4 /* memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD8E27CD89BF0074BDE2 /* memoize.swift */; };
+		5211759E27E3CCF30017FB78 /* benchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211759827E3CC040017FB78 /* benchmarks.swift */; };
+		5211759F27E3D2B70017FB78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B791CA27DF981E00516159 /* main.swift */; };
+		521175A327E520D40017FB78 /* memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD8E27CD89BF0074BDE2 /* memoize.swift */; };
+		521175A427E521530017FB78 /* memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD8E27CD89BF0074BDE2 /* memoize.swift */; };
 		52944A9D27CDCEB8009D6A64 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD6D27CD863C0074BDE2 /* main.swift */; };
 		52944A9E27CDCEBA009D6A64 /* memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241CD8E27CD89BF0074BDE2 /* memoize.swift */; };
 		52944AA827CDCF13009D6A64 /* benchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52944AA727CDCF13009D6A64 /* benchmarks.swift */; };
@@ -18,6 +22,7 @@
 		52A30D4027D12F0F0000F37F /* benchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A30D3F27D12F0F0000F37F /* benchmarks.swift */; };
 		52A30D4127D12F140000F37F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A30D2F27D12EAC0000F37F /* main.swift */; };
 		52A30D4227D12F8A0000F37F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A30D2F27D12EAC0000F37F /* main.swift */; };
+		52B791CB27DF981E00516159 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B791CA27DF981E00516159 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,10 +53,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		52B791C627DF981E00516159 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		520F4A9727CDD9B6001B17A4 /* FibonacciBenchmarks.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FibonacciBenchmarks.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5211759627E3CC040017FB78 /* KnapsackBenchmarks.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnapsackBenchmarks.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5211759827E3CC040017FB78 /* benchmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = benchmarks.swift; sourceTree = "<group>"; };
 		5241CD6B27CD863C0074BDE2 /* Fibonacci */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Fibonacci; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241CD6D27CD863C0074BDE2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5241CD7627CD86620074BDE2 /* SieveOfEratosthenes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SieveOfEratosthenes; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,10 +80,19 @@
 		52A30D2F27D12EAC0000F37F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		52A30D3827D12F010000F37F /* CapturingRainwaterBenchmarks.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapturingRainwaterBenchmarks.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A30D3F27D12F0F0000F37F /* benchmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = benchmarks.swift; sourceTree = "<group>"; };
+		52B791C827DF981E00516159 /* Knapsack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Knapsack; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B791CA27DF981E00516159 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		520F4A9427CDD9B6001B17A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5211759327E3CC040017FB78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,6 +134,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B791C527DF981E00516159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -118,6 +150,7 @@
 				5241CD6C27CD863C0074BDE2 /* Fibonacci */,
 				5241CD7727CD86620074BDE2 /* SieveOfEratosthenes */,
 				52A30D2E27D12EAC0000F37F /* CapturingRainwater */,
+				52B791C927DF981E00516159 /* Knapsack */,
 				5241CD5E27CD860E0074BDE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +164,8 @@
 				520F4A9727CDD9B6001B17A4 /* FibonacciBenchmarks.xctest */,
 				52A30D2D27D12EAC0000F37F /* CapturingRainwater */,
 				52A30D3827D12F010000F37F /* CapturingRainwaterBenchmarks.xctest */,
+				52B791C827DF981E00516159 /* Knapsack */,
+				5211759627E3CC040017FB78 /* KnapsackBenchmarks.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				5241CD6D27CD863C0074BDE2 /* main.swift */,
-				5241CD8E27CD89BF0074BDE2 /* memoize.swift */,
 				52944A9B27CDCE41009D6A64 /* benchmarks.swift */,
+				5241CD8E27CD89BF0074BDE2 /* memoize.swift */,
 			);
 			path = Fibonacci;
 			sourceTree = "<group>";
@@ -163,6 +198,15 @@
 			path = CapturingRainwater;
 			sourceTree = "<group>";
 		};
+		52B791C927DF981E00516159 /* Knapsack */ = {
+			isa = PBXGroup;
+			children = (
+				52B791CA27DF981E00516159 /* main.swift */,
+				5211759827E3CC040017FB78 /* benchmarks.swift */,
+			);
+			path = Knapsack;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +225,23 @@
 			name = FibonacciBenchmarks;
 			productName = FibonacciBenchmarks;
 			productReference = 520F4A9727CDD9B6001B17A4 /* FibonacciBenchmarks.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5211759527E3CC040017FB78 /* KnapsackBenchmarks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5211759C27E3CC040017FB78 /* Build configuration list for PBXNativeTarget "KnapsackBenchmarks" */;
+			buildPhases = (
+				5211759227E3CC040017FB78 /* Sources */,
+				5211759327E3CC040017FB78 /* Frameworks */,
+				5211759427E3CC040017FB78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KnapsackBenchmarks;
+			productName = KnapsackBenchmarks;
+			productReference = 5211759627E3CC040017FB78 /* KnapsackBenchmarks.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5241CD6A27CD863C0074BDE2 /* Fibonacci */ = {
@@ -268,6 +329,23 @@
 			productReference = 52A30D3827D12F010000F37F /* CapturingRainwaterBenchmarks.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		52B791C727DF981E00516159 /* Knapsack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B791CE27DF981E00516159 /* Build configuration list for PBXNativeTarget "Knapsack" */;
+			buildPhases = (
+				52B791C427DF981E00516159 /* Sources */,
+				52B791C527DF981E00516159 /* Frameworks */,
+				52B791C627DF981E00516159 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Knapsack;
+			productName = Knapsack;
+			productReference = 52B791C827DF981E00516159 /* Knapsack */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -275,11 +353,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					520F4A9627CDD9B6001B17A4 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					5211759527E3CC040017FB78 = {
+						CreatedOnToolsVersion = 13.3;
 					};
 					5241CD6A27CD863C0074BDE2 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -294,6 +375,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					52A30D3727D12F010000F37F = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					52B791C727DF981E00516159 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -317,12 +401,21 @@
 				52944AA427CDCF13009D6A64 /* SieveOfEratosthenesBenchmarks */,
 				52A30D2C27D12EAC0000F37F /* CapturingRainwater */,
 				52A30D3727D12F010000F37F /* CapturingRainwaterBenchmarks */,
+				52B791C727DF981E00516159 /* Knapsack */,
+				5211759527E3CC040017FB78 /* KnapsackBenchmarks */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		520F4A9527CDD9B6001B17A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5211759427E3CC040017FB78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,6 +446,16 @@
 				520F4A9E27CDD9BE001B17A4 /* benchmarks.swift in Sources */,
 				520F4AA027CDD9DB001B17A4 /* memoize.swift in Sources */,
 				520F4A9F27CDD9DB001B17A4 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5211759227E3CC040017FB78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521175A427E521530017FB78 /* memoize.swift in Sources */,
+				5211759F27E3D2B70017FB78 /* main.swift in Sources */,
+				5211759E27E3CCF30017FB78 /* benchmarks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +502,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B791C427DF981E00516159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521175A327E520D40017FB78 /* memoize.swift in Sources */,
+				52B791CB27DF981E00516159 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -424,6 +536,36 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnroyal.FibonacciBenchmarks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5211759A27E3CC040017FB78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codecademy.KnapsackBenchmarks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5211759B27E3CC040017FB78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codecademy.KnapsackBenchmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -663,6 +805,24 @@
 			};
 			name = Release;
 		};
+		52B791CC27DF981E00516159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		52B791CD27DF981E00516159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -671,6 +831,15 @@
 			buildConfigurations = (
 				520F4A9C27CDD9B6001B17A4 /* Debug */,
 				520F4A9D27CDD9B6001B17A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5211759C27E3CC040017FB78 /* Build configuration list for PBXNativeTarget "KnapsackBenchmarks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5211759A27E3CC040017FB78 /* Debug */,
+				5211759B27E3CC040017FB78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -725,6 +894,15 @@
 			buildConfigurations = (
 				52A30D3D27D12F010000F37F /* Debug */,
 				52A30D3E27D12F010000F37F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B791CE27DF981E00516159 /* Build configuration list for PBXNativeTarget "Knapsack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B791CC27DF981E00516159 /* Debug */,
+				52B791CD27DF981E00516159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
