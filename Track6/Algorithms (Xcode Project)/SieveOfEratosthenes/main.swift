@@ -7,9 +7,20 @@
 
 import Foundation
 
-// MARK: - Sieve of Eratosthenes
+/// Returns all prime numbers between 0 and the given `limit`.
+/// This is the naive implementation.
+func naivePrimeNumbers(upTo limit: Int) -> [Int] {
+    return (0...limit).filter { number in
+        guard number > 1 else {
+            return false
+        }
+        return !(2..<number).contains { number % $0 == 0 }
+    }
+}
 
-func sieveOfEratosthenes(limit: Int) -> [Int] {
+/// Returns all prime numbers between 0 and the given `limit`.
+/// This optimized implementation uses the Sieve of Eratosthenes algorithm.
+func primeNumbers(upTo limit: Int) -> [Int] {
     var isPrime = Array(repeating: true, count: limit)
     isPrime[0] = false
     isPrime[1] = false
@@ -23,39 +34,4 @@ func sieveOfEratosthenes(limit: Int) -> [Int] {
     }
     
     return isPrime.indices.filter { isPrime[$0] }
-}
-
-func sieveOfEratosthenes(range: Range<Int>) -> [Int] {
-    var isPrime = Dictionary(uniqueKeysWithValues: (2...range.upperBound).map { (key: $0, value: true) })
-    
-    let max = Int(Double(range.upperBound).squareRoot())
-    
-    for number in 2...max {
-        for multiple in stride(from: number * 2, to: range.upperBound, by: number) where isPrime[multiple] == true {
-            isPrime[multiple] = false
-        }
-    }
-    
-    return range.filter { isPrime[$0] == true }
-}
-
-// MARK: - Unoptimized Algorithms
-
-func primeNumbers(upTo limit: Int) -> [Int] {
-    return (0...limit).filter { $0.isPrime() }
-}
-
-func primeNumbers(in range: Range<Int>) -> [Int] {
-    return range.filter { $0.isPrime() }
-}
-
-extension Int {
-    func isPrime() -> Bool {
-        guard self >= 2 else {
-            return false
-        }
-        return !(2..<self).contains { divisor in
-            self % divisor == 0
-        }
-    }
 }
